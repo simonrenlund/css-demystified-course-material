@@ -3,9 +3,40 @@
     font-family: 'Cinzel', serif;
     font-family: 'PT Serif', serif;
 */
-
+*, *::before, *::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'PT Serif', serif;
+  font-size: 1.125rem;
+  color: #414141;
+}
+h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 6rem;
+}
+a {
+  color: #CA5E10;
+}
+p {
+  margin-bottom: 1rem;
+}
+header {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 75rem;
+}
+.subtitle {
+  font-size: 2.25rem;
+  color: #7D7D7D;
+}
 .container {
   width: 90%;
   max-width: 39rem;
   margin: 0 auto;
+}
+.lead {
+  font-size: 1.3125rem;
 }
