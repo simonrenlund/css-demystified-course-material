@@ -30,6 +30,17 @@ h1 {
   border-radius: 1em;
   margin: 0 0.5em;
 }
+.plans > div:first-child, .plans > div:nth-child(3) {
+  color: #4e4e4e;
+  background: linear-gradient(-45deg, #E5E3E8, #fafafa);
+  .plan__price {
+    color: #00a1ab;
+  }
+  .plan__button {
+    background: #4e4e4e;
+    color: #E5E3E8;
+  }
+}
 
 .plan__title {
   text-transform: uppercase;

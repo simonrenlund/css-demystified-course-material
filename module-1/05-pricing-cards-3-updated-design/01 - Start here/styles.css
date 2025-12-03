@@ -1,3 +1,15 @@
+:root {
+  --clr-primary-400:#00a1ab;
+  --clr-primary-500:#3741a0;
+
+  --clr-neutral-400:#4E4E4E;
+  --clr-neutral-300:#E5E3E8;
+  --clr-neutral-200:#FAFAFA;
+  --clr-neutral-100:#FFFFFF;
+
+
+}
+
 /* ///////////////
   Reset
   ////////////// */
@@ -22,6 +34,7 @@ body {
   text-transform: uppercase;
   font-weight: 900;
   margin-top: 3em;
+  padding-top: 1em;
   margin-bottom: 0;
   color: #00a1ab;
 }
@@ -34,7 +47,32 @@ body {
 .container {
   padding: 0 2em;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 75rem;
+  background: var(--clr-neutral-200);
+}
+
+.bg-light {
+  --fg: var(--clr-neutral-400);
+  --bg: var(--clr-neutral-200);
+  --txt: var(--clr-primary-400);
+
+  color: var(--clr-neutral-400);
+  background: linear-gradient(-45deg, var(--clr-neutral-300), var(--clr-neutral-200));
+}
+
+.bg-accent {
+  --bg: var(--clr-neutral-400);
+  --fg: var(--clr-neutral-100);
+  --txt: var(--clr-neutral-100);
+
+  color: var(--clr-neutral-100);
+  background: linear-gradient(-45deg, var(--clr-primary-400), var(--clr-primary-500));
+}
+
+.bg-dark {
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-400);
+  --txt: var(--clr-neutral-100);
 }
 
 /* ///////////////
@@ -43,23 +81,70 @@ body {
 
 .button {
   display: inline-block;
+  margin-top: 0.6em;
   text-decoration: none;
   padding: 0.5em 0.75em;
   border-radius: 0.25em;
   text-transform: uppercase;
   font-weight: 700;
-  background: #00a1ab;
-  color: #fff;
+  background: var(--fg,var(--clr-primary-400));
+  color: var(--bg,var(--clr-neutral-100));
 }
 
-.button--light {
-  background: white;
-  color: #4e4e4e;
+/* ///////////////
+  Teams
+  ////////////// */
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.button--dark {
-  color: white;
-  background: #4e4e4e;
+.team-member {
+  
+  flex: 1 1 45%;
+  margin: 1em;
+  display: flex;
+  border-radius: 0.5em;
+  align-items: center;
+}
+
+.team-member .name {
+  color: var(--txt);
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.team-member .position {
+  opacity: 0.8;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.team-member img {
+  width: 10rem;
+  border-radius: 0.25em;
+}
+
+.team-member--left {
+  text-align: left;
+  padding: 0.5em 2em 0.5em 0.5em;
+}
+
+.team-member--left img {
+  margin-right: 1em;
+}
+
+.team-member--right {
+  text-align: right;
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+.team-member--right img {
+  order: 2;
+  margin-left: 1em;
 }
 
 /* ///////////////
@@ -69,38 +154,26 @@ body {
 .plans {
   display: flex;
   justify-content: center;
-  margin: 2em 0;
+  margin: 2em auto;
+  max-width: 50rem;
 }
 
 .plan {
-  width: 200px;
+  flex: 1 1 20%;
   padding: 2em;
   border-radius: 1em;
-  margin: 0 0.5em;
+  margin: 0;
 }
 
-.plan--light {
-  color: #4e4e4e;
-  background: linear-gradient(-45deg, #e5e3e8, #fafafa);
+.plan--side {
+  margin: 2em 0;
 }
 
-.plan--light .plan__price {
-  color: #00a1ab;
+.plan--right {
+  border-radius: 0 1em 1em 0;
 }
-
-.plan--light .button {
-  color: white;
-  background: #4e4e4e;
-}
-
-.plan--accent {
-  color: #fff;
-  background: linear-gradient(-45deg, #00a1ab, #3741a0);
-}
-
-.plan--accent .button {
-  background: white;
-  color: #4e4e4e;
+.plan--left {
+  border-radius: 1em 0 0 1em;
 }
 
 .plan__title {
@@ -109,6 +182,7 @@ body {
 }
 
 .plan__price {
+  color: var(--txt);
   font-size: 3rem;
   line-height: 1;
   font-weight: 900;
@@ -124,29 +198,4 @@ body {
 .plan__description {
   margin: 2em 0;
   line-height: 1.5;
-}
-
-/* ///////////////
-  Teams
-  ////////////// */
-
-.team-members {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.team-member {
-  background: #abc;
-  text-align: left;
-  flex: 1 1 45%;
-  margin: 1em;
-  display: flex;
-  border-radius: 0.5em;
-  align-items: center;
-  padding: 0.5em 2em 0.5em 0.5em;
-}
-
-.team-member img {
-  width: 10rem;
-  border-radius: 0.25em;
 }
