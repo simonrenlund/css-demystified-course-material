@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+}
+
 body {
   font-family: var(--ff-base);
   font-size: var(--fs-400);
@@ -41,25 +45,25 @@ h1, h2, h3, h4 {
   font-family: var(--ff-accent);
 }
 
-.candidate .name, .candidate .bio, .candidate .roles {
-  margin: 0;
-}
-
 .btn {
   text-transform: uppercase;
   text-decoration: none;
   padding: 0.5em 3em;
-  color:var(--btn-clr);
-  background: var(--btn-bg);
+  color:var(--fg);
+  background: var(--bg);
   border-radius: var(--border-radius);
 }
 
 .candidate {
-  --btn-clr: white;
-  --btn-bg: var(--clr-accent-400);
+  --fg: white;
+  --bg: var(--clr-accent-400);
 
   padding: 1em;
   box-shadow: var(--shadow);
+}
+
+.candidate .name, .candidate .bio, .candidate .roles {
+  margin: 0;
 }
 
 .candidate h2 {
@@ -73,7 +77,7 @@ h1, h2, h3, h4 {
   justify-self: end;
 }
 
-.candidate img {
+.candidate > img {
   border-radius: var(--border-radius);
 }
 
@@ -85,39 +89,38 @@ h1, h2, h3, h4 {
   list-style: none;
   display: flex;
   padding: 0;
-  margin-bottom: 0;
+  margin: auto 0;
   justify-content: space-evenly;
 }
 
 .candidate .roles {
   font-size: var(--fs-300);
   line-height: 1;
-  padding: 0;
 }
 
-.candidate .role {
+.tag {
   display: inline-block;
   font-weight: var(--fw-700);
-  color: var(--role-clr,white);
-  background: var(--role-bg,var(--clr-accent-400));
-  border-radius: var(--border-radius);
+  border-radius: 100vw;
   padding: 0.15em 0.75em;
   margin-right: 0.5em;
+  color: var(--fg,white);
+  background: var(--bg,var(--clr-accent-400));
 }
 
 .ui {
-  --role-clr: var(--clr-ui-400);
-  --role-bg: var(--clr-ui-300);
+  --fg: var(--clr-ui-400);
+  --bg: var(--clr-ui-300);
 }
 
 .ux {
-  --role-clr: var(--clr-ux-400);
-  --role-bg: var(--clr-ux-300);
+  --fg: var(--clr-ux-400);
+  --bg: var(--clr-ux-300);
 }
 
 .dev {
-  --role-clr: var(--clr-dev-400);
-  --role-bg: var(--clr-dev-300);
+  --fg: var(--clr-dev-400);
+  --bg: var(--clr-dev-300);
 }
 
 
@@ -167,6 +170,7 @@ h1, h2, h3, h4 {
 @media (min-width: 500px) {
   .candidate {
     grid-template-columns: min-content minmax(15rem, 22.5rem);
+    grid-template-rows: min-content min-content 1fr auto;    
     grid-template-areas:
       "img name"
       "img role"
