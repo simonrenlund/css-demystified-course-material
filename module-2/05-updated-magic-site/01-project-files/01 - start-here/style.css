@@ -1,0 +1,72 @@
+/* Font used
+font-family: 'PT Sans', sans-serif; 
+*/
+:root {
+  /* Colors */  
+  --clr-neutral-400: #171717;
+  --clr-neutral-100: #fff;
+  --clr-accent-400: #59E89C;
+  /* Typography */    
+  --ff-base: 'PT Sans', sans-serif;
+  --fs-400: 1.25rem;
+  --fs-500: 2.25rem;
+  --fs-300: 1.125rem;
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* General styles */
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+  color: var(--clr-neutral-400);
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-700);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
+  margin: auto;
+  background: var(--bg,var(--clr-neutral-400));
+  color: var(--fg,var(--clr-neutral-100));
+}
+
+main {
+  background-image: url(assets/hero.jpg);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.hero {
+  max-width: 60rem;
+  padding: 6em 3em;
+  margin: auto;
+}
+
+.hero__card {
+  --fg: var(--clr-neutral-400);
+  --bg: var(--clr-accent-400);
+
+  text-align: center;  
+  padding: 2em;
+  background-color: var(--clr-neutral-100);
+}
+
+.hero__card h1 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-400);
+}
